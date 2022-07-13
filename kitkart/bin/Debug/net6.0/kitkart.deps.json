@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "kitkart/1.0.0": {
+        "dependencies": {
+          "kitkart.core": "1.0.0"
+        },
+        "runtime": {
+          "kitkart.dll": {}
+        }
+      },
+      "kitkart.core/1.0.0": {
+        "runtime": {
+          "kitkart.core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "kitkart/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "kitkart.core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
