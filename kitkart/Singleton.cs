@@ -3,21 +3,13 @@ namespace kitkart
     public sealed class Singleton
     {
         private static int counter = 0;
-        private static Singleton instance = null;
-        private static readonly object obj = new Object();
+        private static Lazy<Singleton> instance = new Lazy<Singleton>(() => new Singleton());
+        //private static readonly object obj = new Object();
         public static Singleton GetInstance
         {
             get
             { 
-                if (instance == null)
-                {
-                    lock(obj)
-                    {
-                        if(instance == null)
-                            instance = new Singleton();
-                    }
-                }
-                return instance; 
+                return instance.Value; 
             }
         }
         private Singleton()
