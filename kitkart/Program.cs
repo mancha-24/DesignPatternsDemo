@@ -23,5 +23,5 @@ static void NewEmployee()
 static void NewStudent()
 {
     Singleton fromStudent = Singleton.GetInstance;
-    fromEmployee.PrintDetails("From student");
+    fromStudent.PrintDetails("From student");
 }
