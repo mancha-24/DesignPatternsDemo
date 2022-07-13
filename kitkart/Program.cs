@@ -1,13 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using kitkart;
 using kitkart.core;
 
-KitkartManufacturingCompany factory = new ConcreteKitKart();
+Singleton fromEmployee = Singleton.GetInstance;
+fromEmployee.PrintDetails("From Employee");
 
-IFactory clientAComputer = factory.GetComputer("A");
-clientAComputer.CreateComputer();
-
-IFactory clientBComputer = factory.GetComputer("B");
-clientBComputer.CreateComputer();
+Singleton fromStudent = Singleton.GetInstance;
+fromEmployee.PrintDetails("From student");
 
 Console.ReadKey();
