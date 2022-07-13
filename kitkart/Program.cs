@@ -3,10 +3,25 @@
 using kitkart;
 using kitkart.core;
 
-Singleton fromEmployee = Singleton.GetInstance;
-fromEmployee.PrintDetails("From Employee");
 
-Singleton fromStudent = Singleton.GetInstance;
-fromEmployee.PrintDetails("From student");
+Parallel.Invoke
+(
+    () => NewEmployee(),
+    () => NewStudent()
+);
+NewStudent();
+NewEmployee();
 
 Console.ReadKey();
+
+static void NewEmployee()
+{
+    Singleton fromEmployee = Singleton.GetInstance;
+    fromEmployee.PrintDetails("From Employee");
+}
+
+static void NewStudent()
+{
+    Singleton fromStudent = Singleton.GetInstance;
+    fromEmployee.PrintDetails("From student");
+}

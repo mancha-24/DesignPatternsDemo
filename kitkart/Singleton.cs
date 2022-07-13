@@ -9,14 +9,20 @@ namespace kitkart
     {
         private static int counter = 0;
         private static Singleton instance = null;
+        private static readonly object obj = new Object();
         public static Singleton GetInstance
         {
             get
             { 
-                if(instance == null)
-                    instance = new Singleton();
+                if (instance == null)
+                {
+                    lock(obj)
+                    {
+                        if(instance == null)
+                            instance = new Singleton();
+                    }
+                }
                 return instance; 
-                
             }
         }
         private Singleton()
